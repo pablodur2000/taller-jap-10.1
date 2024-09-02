@@ -31,13 +31,12 @@ function showList(array) {
   // Más info de forEach => https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   array.forEach((element) => {
     const li = document.createElement("li");
-    if(typeof(element) === "string"){
       li.appendChild(document.createTextNode(element));
       container.appendChild(li);
-    }
   });
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  showList(strangeArray.sort());
+  const filteredArray = strangeArray.filter((element) => typeof(element) == "string");
+  showList(filteredArray.sort());
 });
